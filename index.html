@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title> Synchronicity Africa </title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+<!-- bootstrap plugin-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+     <!-- icons -->
+
+     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     <!-- custom css-->
+     <link rel="stylesheet" href="style.css">
+
+<link href="..dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- navbar -->
+
+<nav class="navbar  fixed-top" style="background-color: #EDF4F5; ">
+  <div class="container-fluid" >
+    <a class="navbar-brand" href="#" style="color: black;"> Synchronicity Africa </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"> Synchronicity Africa </h5>
+        <button type="button" class="btn-close" style="color: white;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body" style="background-color: #011b37; ">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" >
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html" style="color: white;">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about.html" target="_blank" style="color: white;"> About </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: white;">Our Initiatives </a>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+             Our Gallery
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="gallery-volunteer.html" target="_blank"> Volunteer Program </a></li>
+              <li><a class="dropdown-item" href="#"> Talkshows </a></li>
+              <li><a class="dropdown-item" href="#"> Mental Health Sessions </a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+     
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- end of nav-->
+
+<main>
+<!-- carousel -->
+ 
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- slide 1-->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="bd-placeholder-img" width="100%" height="500px" src="images\donations.jpeg" alt="welfare by synchronicity">
+        <img src="images\Synchronicity africa 2 transparent-01.png" class="logo" alt="Logo">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1 style="color: #ad945a;"> Empowering Communities, Transforming Lives </h1>
+            <p >Empowerment is at the heart of our mission at Synchronicity Africa. We believe in creating opportunities for individuals and communities to thrive. Through our various programs, we provide education, resources, and support to help people break free from the cycle of poverty and build a better future. Our initiatives range from skill development workshops to entrepreneurial training, all designed to empower individuals
+               to take charge of their lives and contribute positively to society.</p>
+          </div>
+        </div>
+      </div>
+
+      <!--slide 2-->
+      <div class="carousel-item">
+        <img class="bd-placeholder-img" width="100%" height="500px" src="images\talkshow.jpg" alt="welfare by synchronicity">
+        <img src="images\Synchronicity africa 2 transparent-01.png" class="logo" alt="Logo">
+        <div class="container">
+          <div class="carousel-caption text-start ">
+            <h1 style="color: #ad945a;">Join Our Volunteer Programs: Be the Change You Wish to See.</h1>
+            <p>At Synchronicity Africa, we know that real change happens when people come together for a common cause. Our volunteer programs offer a unique opportunity for individuals to make a tangible difference in their communities. Whether you're passionate about education, healthcare, or community development, we have a place for you. Join us and be part of a dedicated team that is making a lasting impact. 
+              Together, we can create a more equitable and compassionate world.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide 3-->
+      <div class="carousel-item">
+        <img class="bd-placeholder-img" width="100%" height="500px" src="images\community.jpg" alt="welfare by synchronicity">
+        <img src="images\Synchronicity africa 2 transparent-01.png" class="logo" alt="Logo">
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1 style="color: #ad945a;">Focusing on Mental Health: Building Resilient Communities.</h1>
+            <p>Mental health is a critical component of overall well-being, yet it is often overlooked. At Synchronicity Africa, 
+              we are committed to addressing mental health issues and promoting emotional wellness in our communities. Our mental health programs provide counseling, support groups, 
+              and educational resources to help individuals cope with life's challenges. By fostering a supportive environment and raising awareness, we aim to break the stigma around mental
+               health and build resilient, thriving communities..</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="images\IMG-20240621-WA0028.jpg " alt=" " > 
+        <h2 class="fw-normal" style="color: #ad945a;">Mental Health Talks </h2>
+        <p>A space where compassionate guidance and transformation training converge to nurture the well-being of individuals, corporate organizations, and schools alike.
+
+          Our dedicated team of experts is committed to empowering minds and fostering a culture of mental wellness. Whether you seek personal growth, organizational resilience, or enhanced learning environments, our tailored affordable coaching programs offer invaluable tools and insights to navigate life's challenges with confidence.
+          
+          Join us on this journey of self-discovery and empowerment, as we pave way for a brighter, healthier, and more thriving society.</p>
+        <p><a class="btn " href="#" style="background-color: #ad945a;">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="images\IMG-20240621-WA0027.jpg " alt=" " > 
+        <h2 class="fw-normal"style="color: #ad945a;" >Talkshows and podcasts</h2>
+        <p>Where meaningful connections and thought-provoking discussions converge!
+
+          A dynamic platform that seeks to unravel life's intricacies through engaging talk shows, delving into an array of topics ranging from mental health to the profound meaning of life.
+          
+          Our passionate guests share their inspiring stories, simplifying the complexities of existence, and guiding us on a journey towards self-discovery and purposeful living.
+          
+          Join us in this transformation space as we embrace synchronicity and foster sustainable development growth, one conversation at a time.</p>
+        <p><a class="btn " href="talkshow.html" target="_blank" style="background-color: #ad945a;"> Subscribe Here &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4" style="justify-content: center;">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="images\IMG-20240621-WA0027.jpg " alt=" " > 
+        <h2 class="fw-normal" style="color: #ad945a;">Community Empowerment</h2>
+        <p>Mentorship, motivational talks and mental health coaching & training for pupils and high school students
+
+          Education sponsorship for bright students. Renovations of old and tattered school infrastructure (painting, installations, sanitary facilities, ...)procurement of school furniture i.e. desks, chairs, writing boards, ...
+          
+          Support rehabilitation programs for drug and substance addicts. Promote and procure facilities for garbage and sanitation to be managed by the community, offering employment to the youth. Funding for small businesses in the community i.e. car wash, vending booth, motorbike taxis, beauty saloons, barbershops, ....</p>
+        <p><a class="btn " href="donate.html" target="_blank" style="background-color: #ad945a;">Donate Here &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1" style="color: #ad945a;">Challenges in Nairobi's Low-Resource Areas: </h2>
+        <p class="lead">Pupils and students suffering from hunger; affecting their physical, mental-well being and academic experiences <br>
+
+          Lack of proper school uniforms <br>
+          
+          Lack of enough school fees leading to early dropouts <br>
+          
+          Poor learning equipment and infrastructure i.e. furniture, writing boards, sanitary facilities, ... <br>
+          
+          Insecurity, drugs and substance abuse <br>
+          
+          Poor sanitation, garbage & drainage system in the communities leading to outbreak and spread of diseases <br>
+          
+          Lack of sufficient access to sanitary towels for female students <br>
+          
+          High unemployment rate in the communities. <br>
+
+          Flooding in low rise areas.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"src=" images\IMG-20240621-WA0018.jpg " role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"> 
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1" style="color: #ad945a;">Donations and Give Aways </h2>
+        <p class="lead"> Food items <br>
+
+          School uniforms i.e. clothes, shoes, socks <br>
+          
+          Stationery donations i.e. books, math sets, pens, pencil <br>
+          
+          Sanitary pads for female students</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" src="images\IMG-20240621-WA0011.jpg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1" style="color: #ad945a;">Our Volunteer Program </h2>
+        <p class="lead">An extraordinary team of volunteers who are truly remarkable individuals!
+
+          Their unstoppable passion drives them to create meaningful change and touch lives with boundless compassion. United by a shared vision of transforming the world, they embody the essence of Synchronicity, forming a harmonious symphony of action and unwavering dedication.
+          
+          With each step resonating with genuine care and selflessness, they bring our mission to life and ignite hope in every heart. Bound by an unbreakable bond, they stand tall as a testament to our goal—a collective force working towards a better society for all</p>
+      </div>
+      <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="images\IMG-20240621-WA0017.jpg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+    <!--testimonials-->
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">What People Say About Us</h2>
+      <div id="carouselTestimonialsUnique" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <div class="d-flex justify-content-center">
+                      <div class="card border-0">
+                          <div class="card-body text-center" style="background-color: #ad945a;">
+                              <img src="images\prof.jpg" alt="Profile 1" class="rounded-circle mb-3" width="100">
+                              <p class="card-text"><i>"This organization has made a huge impact in my life. I am forever grateful for their support."</i></p>
+                              <h5 class="card-title mt-2">John Doe</h5>
+                              <p class="text-muted">Beneficiary</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                      <div class="card border-0">
+                          <div class="card-body text-center" style="background-color: #ad945a;">
+                              <img src="profile2.jpg" alt="Profile 2" class="rounded-circle mb-3" width="100">
+                              <p class="card-text"><i>"Their dedication and commitment are unparalleled. They truly care about the community."</i></p>
+                              <h5 class="card-title mt-2">Jane Smith</h5>
+                              <p class="text-muted">Volunteer</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="d-flex justify-content-center">
+                      <div class="card border-0">
+                          <div class="card-body text-center" style="background-color: #ad945a;">
+                              <img src="profile3.jpg" alt="Profile 3" class="rounded-circle mb-3" width="100">
+                              <p class="card-text"><i>"An exceptional organization that has positively influenced so many lives."</i></p>
+                              <h5 class="card-title mt-2">Michael Johnson</h5>
+                              <p class="text-muted">Donor</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselTestimonialsUnique" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselTestimonialsUnique" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+          </a>
+      </div>
+  </div>
+  
+  
+  
+
+  </div><!-- /.container -->
+
+<!-- Footer -->
+<footer class=" mt-5" style="background-color: #EDF4F5; color: black;">
+  <div class="container py-4">
+      <div class="row">
+          <div class="col-12 text-center mb-3">
+              <h5>Follow Us</h5>
+          </div>
+          <div class="col-12 text-center">
+              <a href="https://www.instagram.com" class="text-dark mx-2" target="_blank">
+                  <i class="fab fa-instagram fa-2x"></i>
+              </a>
+              <a href="https://www.twitter.com" class="text-dark mx-2" target="_blank">
+                  <i class="fab fa-twitter fa-2x"></i>
+              </a>
+              <a href="mailto:info@synchronicityafrica.org" class="text-dark mx-2">
+                  <i class="fas fa-envelope fa-2x"></i>
+              </a>
+              <a href="https://www.tiktok.com" class="text-dark mx-2" target="_blank">
+                  <i class="fab fa-tiktok fa-2x"></i>
+              </a>
+          </div>
+      </div>
+      <div class="row text-center mt-3">
+          <div class="col-12">
+              <p class="mb-0">&copy; 2024 Synchronicity Africa. All rights reserved.</p>
+          </div>
+      </div>
+  </div>
+</footer>
+ <!-- end of footer -->
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</script>
+    </body>
+</html>
