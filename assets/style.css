@@ -10,8 +10,8 @@ body{
 }
 .carousel-item img.logo {
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 0;
+    left: 2px;
     width: 500px; /* Adjust as needed */
     height: auto;
     z-index: 6; /* Ensure it appears above the image */
